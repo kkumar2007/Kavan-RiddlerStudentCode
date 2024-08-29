@@ -28,24 +28,29 @@ public class Riddler {
 
     public String decryptTwo(String encrypted) {
         String decrypted = "";
+        // Initialize string to accumulate numbers from the encrypted string
         String num = "";
-        for (int i = 0; i < encrypted.length(); i++)
-        {
+        // Loop through each character of the encrypted string
+        for (int i = 0; i < encrypted.length(); i++) {
+            // Get the current char
             char c = encrypted.charAt(i);
-            if(c == ' ')
-            {
+            if(c == ' ') {
+                // Convert the accumulated number to an integer
                 int asciiVal = Integer.parseInt(num);
+                // Convert the integer to its corresponding character
                 decrypted += (char) asciiVal;
+                // Reset the num string to accumulate the next number
                 num = "";
             }
-            else
-            {
+            else {
+                // If it's not a space, add the character to the num string
                 num += c;
             }
-
         }
+        // Return the final decrypted string
         return decrypted;
     }
+
 
     public String decryptThree(String encrypted) {
         String decrypted = "";
