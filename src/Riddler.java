@@ -19,7 +19,7 @@ public class Riddler {
                 // Shift lowercase letters by 9, wrapping around using modulo
                 decrypted += (char) (((c - 'a' + 9) % 26) + 'a');
             } else {
-                // If not a letter, append the character as is (e.g., spaces or punctuation)
+                // If not a letter, leave the character
                 decrypted += c;
             }
         }
