@@ -10,8 +10,7 @@ public class Riddler {
 
     public String decryptOne(String encrypted) {
         String decrypted = "";
-        for(int i = 0; i < encrypted.length(); i++)
-        {
+        for(int i = 0; i < encrypted.length(); i++) {
             char c = encrypted.charAt(i);
             if (c >= 'A' && c <= 'Z') {
                 // Shift uppercase letters by 9, wrapping around using modulo
@@ -24,7 +23,6 @@ public class Riddler {
                 decrypted += c;
             }
         }
-        System.out.println(decrypted);
         return decrypted;
     }
 
