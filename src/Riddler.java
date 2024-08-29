@@ -10,17 +10,42 @@ public class Riddler {
 
     public String decryptOne(String encrypted) {
         String decrypted = "";
-
-        // TODO: Complete the decryptOne() function.
-
+        for(int i = 0; i < encrypted.length(); i++)
+        {
+            char c = encrypted.charAt(i);
+            if (c >= 'A' && c <= 'Z') {
+                // Shift uppercase letters by 9, wrapping around using modulo
+                decrypted += (char) (((c - 'A' + 9) % 26) + 'A');
+            } else if (c >= 'a' && c <= 'z') {
+                // Shift lowercase letters by 9, wrapping around using modulo
+                decrypted += (char) (((c - 'a' + 9) % 26) + 'a');
+            } else {
+                // If not a letter, append the character as is (e.g., spaces or punctuation)
+                decrypted += c;
+            }
+        }
+        System.out.println(decrypted);
         return decrypted;
     }
 
     public String decryptTwo(String encrypted) {
         String decrypted = "";
+        String num = "";
+        for (int i = 0; i < encrypted.length(); i++)
+        {
+            char c = encrypted.charAt(i);
+            if(c == ' ')
+            {
+                int asciiVal = Integer.parseInt(num);
+                decrypted += (char) asciiVal;
+                num = "";
+            }
+            else
+            {
+                num += c;
+            }
 
-        // TODO: Complete the decryptTwo() function.
-
+        }
         return decrypted;
     }
 
